@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2019/12/17 20:07
 # @Author  : ZhangYang
-import datetime
+
 import threading
 import re
 import socket
@@ -59,6 +59,7 @@ class WSGIServer(object):
         else:
             # 动态请求
             env = dict()
+            env["PATH_INFO"] = file_name
             # start_response =
             response_body = mini_frame.application(env, self.set_response_header)
             response_body = response_body.encode("utf-8")
