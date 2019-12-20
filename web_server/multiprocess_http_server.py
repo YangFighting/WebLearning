@@ -46,7 +46,7 @@ def service_client(client_socket=None, client_addr=None):
 
 def main():
     """ 使用 多进程 完成实现简单的http服务器"""
-    host = ''
+    host = '127.0.0.1'
     port = 7890
 
     # 建立套接字
