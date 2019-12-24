@@ -19,14 +19,14 @@ def route(url):
     return decorator
 
 
-@route("/index.py")
+@route("/index.html")
 def index():
     with open("./templates/index.html", encoding="utf-8") as f:
         content = f.read()
     return content
 
 
-@route("/center.py")
+@route("/center.html")
 def center():
     with open("./templates/center.html", encoding="utf-8") as f:
         return f.read()
@@ -47,4 +47,4 @@ def application(env, start_response):
     try:
         return g_url_route.get(file_name)()
     except Exception as e:
-        return "route dict error: {}".format(e.__str__())
+        return "route dict key {} error: {}".format(file_name, e.__str__())
