@@ -49,7 +49,7 @@ class WSGIServer(object):
         print("file name: {}".format(file_name))
 
         # http 格式数据 --body
-        if not file_name.endswith(".py"):
+        if not file_name.endswith(".html"):
             # noinspection PyBroadException
             try:
                 f = open(self.static_path + file_name, "rb")
